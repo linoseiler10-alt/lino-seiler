@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lino Seiler - Acteur Professionnel | Portfolio Cinématographique</title>
+    <meta name="description" content="Portfolio de Lino Seiler, jeune acteur professionnel de 14 ans. Découvrez ses rôles dans 'Où est Ava' et 'Une Colère Noire', sa filmographie et sa passion pour le cinéma.">
+    <meta name="author" content="Lino Seiler">
+    <meta name="keywords" content="Lino Seiler, acteur, cinéma, portfolio, jeune acteur, filmographie, Où est Ava, Une Colère Noire">
+    
+    <meta property="og:title" content="Lino Seiler - Acteur Professionnel | Portfolio Cinématographique">
+    <meta property="og:description" content="Portfolio de Lino Seiler, jeune acteur professionnel de 14 ans. Découvrez sa filmographie et sa passion pour le cinéma.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lovable_dev">
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables CSS pour les couleurs cinématiques */
+        :root {
+            --cinematic-dark: hsl(210, 30%, 8%);
+            --cinematic-gray: hsl(215, 20%, 65%);
+            --cinematic-gray-light: hsl(210, 20%, 98%);
+            --cinematic-light: hsl(0, 0%, 98%);
+            --cinematic-gold: hsl(45, 100%, 70%);
+            --gradient-hero: linear-gradient(135deg, hsl(210, 30%, 8%) 0%, hsl(215, 20%, 25%) 100%);
+            --gradient-gold: linear-gradient(135deg, hsl(45, 100%, 70%) 0%, hsl(35, 100%, 65%) 100%);
+            --shadow-cinematic: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --shadow-gold: 0 25px 50px -12px rgba(255, 215, 0, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--cinematic-dark);
+        }
+        
+        /* Typographie */
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Animations */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-30px); }
+            70% { transform: translateY(-15px); }
+            90% { transform: translateY(-4px); }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        /* Utilitaires */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--cinematic-gold);
+            color: var(--cinematic-dark);
+        }
+        
+        .btn-primary:hover {
+            background: hsl(45, 100%, 65%);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--cinematic-light);
+            border: 2px solid var(--cinematic-light);
+        }
+        
+        .btn-outline:hover {
+            background: var(--cinematic-light);
+            color: var(--cinematic-dark);
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav.scrolled {
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cinematic-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-brand:hover {
+            color: var(--cinematic-gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            color: var(--cinematic-gray);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--cinematic-gold);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cinematic-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            color: var(--cinematic-light);
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title .gold {
+            color: var(--cinematic-gold);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-cinematic);
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--cinematic-light);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .scroll-indicator:hover {
+            color: var(--cinematic-gold);
+        }
+        
+        /* Section About */
+        .about {
+            background: var(--cinematic-gray-light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-cinematic);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--cinematic-dark);
+        }
+        
+        .section-title .gold {
+            color: var(--cinematic-gold);
+        }
+        
+        .about-text {
+            font-size: 1.125rem;
+            color: var(--cinematic-gray);
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .quote-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .quote-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--cinematic-dark);
+        }
+        
+        /* Filmographie */
+        .filmography {
+            background: var(--cinematic-gray-light);
+        }
+        
+        .films-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .film-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .film-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .film-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cinematic-dark);
+            transition: color 0.3s ease;
+        }
+        
+        .film-card:hover .film-title {
+            color: var(--cinematic-gold);
+        }
+        
+        .film-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--cinematic-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .film-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .status-production {
+            background: var(--cinematic-gold);
+            color: var(--cinematic-dark);
+        }
+        
+        .status-completed {
+            background: var(--cinematic-gray);
+            color: var(--cinematic-light);
+        }
+        
+        .film-role {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--cinematic-gold);
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        
+        .film-description {
+            color: var(--cinematic-gray);
+            line-height: 1.6;
+        }
+        
+        /* Demo Reel */
+        .demo-reel {
+            background: white;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-cinematic);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        
+        /* Galerie */
+        .gallery {
+            background: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .gallery-label {
+            color: var(--cinematic-light);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-label {
+            opacity: 1;
+        }
+        
+        /* Contact */
+        .contact {
+            background: var(--cinematic-gray-light);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--cinematic-dark);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item a {
+            color: var(--cinematic-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--cinematic-gold);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--cinematic-dark);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--cinematic-gold);
+        }
+        
+        .form-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--cinematic-gold);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--cinematic-dark);
+            color: var(--cinematic-light);
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-brand .gold {
+            color: var(--cinematic-gold);
+        }
+        
+        .footer-desc {
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+        
+        .footer-links h4 {
+            color: var(--cinematic-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: rgba(248, 250, 252, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--cinematic-gold);
+        }
+        
+        .footer-quote {
+            text-align: right;
+            font-style: italic;
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(248, 250, 252, 0.2);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .contact-content,
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .films-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .footer-quote {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <a href="#home" class="nav-brand">Lino Seiler</a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Accueil</a></li>
+                    <li><a href="#about" class="nav-link">À propos</a></li>
+                    <li><a href="#filmography" class="nav-link">Filmographie</a></li>
+                    <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title animate-fade-in">
+                        Lino <span class="gold">Seiler</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle animate-fade-in" style="animation-delay: 0.2s;">
+                        "Le cinéma n'est qu'un métier, c'est une passion qui donne vie aux histoires et touche les cœurs."
+                    </p>
+                    
+                    <div class="hero-buttons animate-fade-in" style="animation-delay: 0.4s;">
+                        <a href="https://youtu.be/VoitiLEUja4?feature=share" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            Voir ma bande démo
+                        </a>
+                        <a href="#filmography" class="btn btn-primary">
+                            Découvrir ma filmographie
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image animate-fade-in" style="animation-delay: 0.1s;">
+                    <img 
+                        src="public/lovable-uploads/2bb68497-04c7-46b3-bbb5-8cbfbe9f7e93.png" 
+                        alt="Portrait professionnel de Lino Seiler en noir et blanc"
+                    />
+                </div>
+            </div>
+        </div>
+        
+        <button class="scroll-indicator animate-bounce" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image animate-fade-in">
+                    <img 
+                        src="src/assets/script-reading.jpg" 
+                        alt="Lino Seiler lisant un script"
+                    />
+                </div>
+
+                <div class="animate-fade-in" style="animation-delay: 0.2s;">
+                    <h2 class="section-title">
+                        À propos de <span class="gold">moi</span>
+                    </h2>
+                    
+                    <div class="about-text">
+                        <p>
+                            Je suis Lino Seiler, un jeune acteur professionnel de <strong>14 ans</strong> 
+                            passionné par l'art cinématographique. Depuis mon plus jeune âge, j'ai été fasciné par 
+                            la capacité du cinéma à raconter des histoires profondes et à émouvoir le public.
+                        </p>
+                        
+                        <p>
+                            Mon parcours artistique a commencé très tôt, et j'ai eu la chance de travailler avec 
+                            des réalisateurs talentueux qui m'ont permis de développer mes compétences et ma passion 
+                            pour le jeu d'acteur. Chaque rôle est pour moi une nouvelle aventure, une opportunité 
+                            d'explorer différentes facettes de l'humanité.
+                        </p>
+                        
+                        <p>
+                            Ce qui me motive le plus dans ce métier, c'est la possibilité de donner vie à des personnages 
+                            authentiques et de contribuer à des projets qui marquent les spectateurs. Le cinéma n'est pas 
+                            seulement un divertissement pour moi, c'est un moyen puissant de créer du lien et de l'émotion.
+                        </p>
+                        
+                        <div class="quote-box">
+                            <h3 class="quote-title">Ma philosophie artistique</h3>
+                            <p style="font-style: italic;">
+                                "Chaque personnage que j'interprète me permet d'apprendre quelque chose de nouveau 
+                                sur moi-même et sur le monde qui m'entoure. C'est cette curiosité constante qui 
+                                nourrit ma passion pour le cinéma."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filmography Section -->
+    <section id="filmography" class="filmography">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;" class="animate-fade-in">
+                <h2 class="section-title">
+                    Filmographie & <span class="gold">Expériences</span>
+                </h2>
+                <p style="font-size: 1.125rem; color: var(--cinematic-gray); max-width: 32rem; margin: 0 auto;">
+                    Découvrez les projets cinématographiques qui ont marqué mon parcours artistique 
+                    et qui témoignent de ma passion pour le septième art.
+                </p>
+            </div>
+
+            <div class="films-grid">
+                <div class="film-card animate-fade-in">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+                        <div>
+                            <h3 class="film-title">Où est Ava</h3>
+                            <div class="film-meta">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span>Réalisé par Romed Wyder</span>
+                            </div>
+                            <div class="film-meta">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>2025</span>
+                            </div>
+                        </div>
+                        <span class="film-status status-production">En production</span>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <div class="film-role">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <span>Rôle principal</span>
+                        </div>
+                        <span style="color: var(--cinematic-gray); font-size: 0.875rem;">• Long métrage</span>
+                    </div>
+                    
+                    <p class="film-description">
+                        Un projet ambitieux qui explore les thèmes de la disparition et de la recherche de vérité.
+                    </p>
+
+                    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+                        <div style="width: 3rem; height: 4px; background: var(--gradient-gold); border-radius: 9999px; transition: all 0.3s ease;"></div>
+                    </div>
+                </div>
+
+                <div class="film-card animate-fade-in" style="animation-delay: 0.2s;">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+                        <div>
+                            <h3 class="film-title">Une Colère Noire</h3>
+                            <div class="film-meta">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span>Réalisé par Joseph Kumbela</span>
+                            </div>
+                            <div class="film-meta">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>2024</span>
+                            </div>
+                        </div>
+                        <span class="film-status status-completed">Terminé</span>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <div class="film-role">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <span>Petit rôle</span>
+                        </div>
+                        <span style="color: var(--cinematic-gray); font-size: 0.875rem;">• Court métrage</span>
+                    </div>
+                    
+                    <p class="film-description">
+                        Un court métrage puissant qui aborde des questions sociales contemporaines.
+                    </p>
+
+                    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+                        <div style="width: 3rem; height: 4px; background: var(--gradient-gold); border-radius: 9999px; transition: all 0.3s ease;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;" class="animate-fade-in" style="animation-delay: 0.4s;">
+                <p style="font-style: italic; color: var(--cinematic-gray);">
+                    "Chaque projet est une nouvelle aventure créative qui enrichit mon expérience artistique."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Reel Section -->
+    <section id="demo" class="demo-reel">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <h2 class="section-title">
+                    Bande <span class="gold">démo</span>
+                </h2>
+                <p style="font-size: 1.125rem; color: var(--cinematic-gray); margin-top: 1rem;">
+                    Extraits sélectionnés — jeu d'acteur et scènes récentes.
+                </p>
+            </div>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/VoitiLEUja4"
+                    title="Bande démo de Lino Seiler"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;" class="animate-fade-in">
+                <h2 class="section-title">
+                    Galerie <span class="gold">Photo</span>
+                </h2>
+                <p style="font-size: 1.125rem; color: var(--cinematic-gray); max-width: 32rem; margin: 0 auto;">
+                    Une collection de portraits professionnels et de moments captés sur les plateaux de tournage, 
+                    témoignant de ma passion pour l'art cinématographique.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item animate-fade-in">
+                    <img 
+                        src="public/lovable-uploads/f7661e5b-8667-49a8-a3a0-cfab305d188f.png" 
+                        alt="Portrait professionnel — gros plan"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <div style="text-align: center;">
+                            <p class="gallery-label">Portrait</p>
+                            <div style="width: 3rem; height: 2px; background: var(--cinematic-gold); margin: 0 auto;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item animate-fade-in" style="animation-delay: 0.1s;">
+                    <img 
+                        src="public/lovable-uploads/3104ec40-0a41-456f-842f-3a378c7d5e7c.png" 
+                        alt="Portrait de nuit — plan serré"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <div style="text-align: center;">
+                            <p class="gallery-label">Portrait</p>
+                            <div style="width: 3rem; height: 2px; background: var(--cinematic-gold); margin: 0 auto;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item animate-fade-in" style="animation-delay: 0.2s;">
+                    <img 
+                        src="public/lovable-uploads/5d2bef03-f3aa-447b-b8aa-0ec3a40aba55.png" 
+                        alt="Photo de tournage en extérieur"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <div style="text-align: center;">
+                            <p class="gallery-label">Tournage</p>
+                            <div style="width: 3rem; height: 2px; background: var(--cinematic-gold); margin: 0 auto;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item animate-fade-in" style="animation-delay: 0.3s;">
+                    <img 
+                        src="src/assets/script-reading.jpg" 
+                        alt="Préparation d'un rôle — lecture de script"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <div style="text-align: center;">
+                            <p class="gallery-label">Préparation</p>
+                            <div style="width: 3rem; height: 2px; background: var(--cinematic-gold); margin: 0 auto;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;" class="animate-fade-in">
+                <h2 class="section-title">
+                    Me <span class="gold">contacter</span>
+                </h2>
+                <p style="font-size: 1.125rem; color: var(--cinematic-gray); max-width: 32rem; margin: 0 auto;">
+                    Vous avez un projet en tête ? N'hésitez pas à me contacter pour discuter de vos besoins 
+                    et voir comment nous pouvons collaborer ensemble.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info animate-fade-in">
+                    <h3>Informations de contact</h3>
+                    
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <div>
+                            <strong>Téléphone</strong><br>
+                            <a href="tel:+41764694345">+41 76 469 43 45</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:linoseiler10@gmail.com">linoseiler10@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="m22 3-10 8.5L2 3"></path>
+                        </svg>
+                        <div>
+                            <strong>Instagram</strong><br>
+                            <a href="https://instagram.com/linosk8" target="_blank" rel="noopener noreferrer">@linosk8</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form animate-fade-in" style="animation-delay: 0.2s;">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nom complet *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Sujet *</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-brand">
+                        Lino <span class="gold">Seiler</span>
+                    </h3>
+                    <p class="footer-desc">
+                        Acteur professionnel passionné par l'art cinématographique
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    
+                    <a href="tel:+41764694345" class="footer-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +41 76 469 43 45
+                    </a>
+                    
+                    <a href="mailto:linoseiler10@gmail.com" class="footer-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        linoseiler10@gmail.com
+                    </a>
+                    
+                    <a href="https://instagram.com/linosk8" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="m22 3-10 8.5L2 3"></path>
+                        </svg>
+                        @linosk8
+                    </a>
+                </div>
+
+                <div class="footer-quote">
+                    <blockquote>
+                        "Le cinéma n'est qu'un métier,<br>
+                        c'est une passion qui donne vie<br>
+                        aux histoires et touche les cœurs."
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Lino Seiler. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message envoyé ! Je vous répondrai dès que possible.');
+            this.reset();
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lino Seiler",
+        "jobTitle": "Acteur",
+        "description": "Jeune acteur professionnel de 14 ans passionné par l'art cinématographique",
+        "url": "https://linoseiler.com",
+        "email": "linoseiler10@gmail.com",
+        "telephone": "+41764694345",
+        "sameAs": [
+            "https://instagram.com/linosk8",
+            "https://youtu.be/VoitiLEUja4?feature=share"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Acteur",
+            "occupationLocation": {
+                "@type": "Country",
+                "name": "Suisse"
+            }
+        }
+    }
+    </script>
+</body>
+</html>
